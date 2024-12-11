@@ -89,7 +89,7 @@ VALUES
 UPDATE people SET department_id = 1 WHERE department_id IS NULL;
 
 -- Q5 年齢の降順で男性の名前と年齢を取得してください。
-SELECT name, age FROM people WHERE gender = 1 ORDER BY age ASC;
+SELECT name, age FROM people WHERE gender = 1 ORDER BY age DESC;
 
 -- Q6 テーブル・レコード・カラムという3つの単語を適切に使用して、下記のSQL文を日本語で説明してください。
 
@@ -106,7 +106,7 @@ ORDER BY
 `created_at`の昇順で並べ替える。
 
 -- Q7 20代の女性と40代の男性の名前一覧を取得してください。
-SELECT name, age FROM people WHERE (gender = 2 AND age BETWEEN 20 AND 29) or (gender = 1 AND age BETWEEN 40 AND 49);
+SELECT name, age FROM people WHERE gender = 2 AND age BETWEEN 20 AND 29 || gender = 1 AND age BETWEEN 40 AND 49;
 
 -- Q8 営業部に所属する人だけを年齢の昇順で取得してください。
 SELECT name, department_id, age FROM people WHERE department_id = 1 ORDER BY age;
